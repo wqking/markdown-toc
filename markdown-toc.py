@@ -1,3 +1,21 @@
+#!/usr/bin/env python
+
+# Tool markdown-toc
+# 
+# Copyright (C) 2022 Wang Qi (wqking)
+# 
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+# 
+#   http://www.apache.org/licenses/LICENSE-2.0
+# 
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
 import glob
 import argparse
 import traceback
@@ -82,6 +100,9 @@ class MarkdownParser :
 			for i in range(len(self._blockList)) :
 				if self._blockList[i]['type'] == blockType_heading :
 					tocIndex = i + 1
+					for k in range(i) :
+						if self._blockList[k]['type'] == blockType_anchor :
+							self._blockList[k]['type'] = blockType_ignore
 					break
 		self._blockList.insert(tocIndex, tocBlock)
 
