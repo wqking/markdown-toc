@@ -14,7 +14,8 @@ The TOC is generated from the headings in the markdown document.
 
 ## Command line usage
 ```
-python markdown-toc.py  markdown-toc.py ACTION [--help] [-h] --file FILE [--before BEFORE] [--after AFTER] [--min-headings MIN_HEADINGS] [--min-level MIN_LEVEL] [--max-level MAX_LEVEL] [--front FRONT] [--exclude EXCLUDE]
+python markdown-toc.py ACTION [--help] [-h] --file FILE [--before BEFORE] [--after AFTER] [--min-headings MIN_HEADINGS] 
+                       [--min-level MIN_LEVEL] [--max-level MAX_LEVEL] [--front FRONT] [--exclude EXCLUDE]
 ```
 
 #### ACTION, required
